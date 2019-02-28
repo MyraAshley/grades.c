@@ -1,0 +1,18 @@
+#include <FastLED.h>
+#define NUM_LEDS 135
+#define DATA_PIN 11
+
+CRGB leds[NUM_LEDS];
+
+voide set up(){
+    FastLED,addLeds<ws21812B,DATA_PIN>(leds,NUM_LEDS);
+}
+void loop(){
+    for (int i = 0;<NUM_LEDS; i++)}
+        leds[(NUM_LED-5)]=CRGB::Red
+        leds[(NUM_LED-6)]=CRGB::Blue
+        leds[(NUM_LED-7)]=CRGB::Green
+        FastLED.show();
+        delay(50);
+        leds[(NUM_LED-8)]=CRGB::Black
+}
