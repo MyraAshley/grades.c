@@ -3,7 +3,7 @@ const int buttonPin = 2;    // the number of the pushbutton pin
 const int motorPin = 3;      // the number of the LED pin
 
 // Variables will change:
-int motorState = HIGH;         // the current state of the output pin
+int motorState = 0;         // the current state of the output pin
 int buttonState;             // the current reading from the input pin
 int lastButtonState = LOW;   // the previous reading from the input pin
 
@@ -51,8 +51,8 @@ void loop() {
   // set the LED:
   analogWrite(motorPin, motorState);
     buttonState = 144;
-      if (motorState < 255)
-          motorState += 50;
+      if (motorState =< 255)
+          motorState + 50;
     
 
   // save the reading. Next time through the loop, it'll be the lastButtonState:
