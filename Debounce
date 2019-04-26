@@ -13,7 +13,10 @@ void setup(void)
 void loop(void)
     {serialConmection.println(accel.readToJSON(“accelerometer”));
     delay(100);}
-wire.begin()
-    {if acceleration accel => 40 
+wire.begin(){
+    if (acceleration accel => 0 && acceleration accel < 50)
+        wire.write("safe");
+    else if (acceleration accel => 51)
+        wire.write("not safe");}
     
 
