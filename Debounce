@@ -1,22 +1,43 @@
-#include <Arduino.h>
+include <Arduino.h>
 #include <Wire.h>
 #include <ArdusatSDK.h>
+#include <math.h>
 
-ArdusatSerial serialConnection(SERIAL_MODE_HARDWARE_AND_SOFTWARE,8,9);
+float accel_mag;
+
+ArdusatSerial serialConnection(SERIAL_MODE_HARDWARE_AND_SOFTWARE, 8, 9);
 
 Acceleration accel;
 
 void setup(void)
-    {serialConnection.begin(9600);
-    accelerate.begin();
-    serialConnection.println(“”);}
+{
+  // Be able to communicate with println later
+  serialConnection.begin(9600);
+
+  // Get the accelerometer ready for reading
+  accel.begin();
+
+
+  // Send a blank line in case there's garbage showing on the serial line
+  serialConnection.println("");
+}
+
 void loop(void)
-    {serialConmection.println(accel.readToJSON(“accelerometer”));
-    delay(100);}
+{
+  accel.read();
+  
+  accel_mag = sqrt(accel.x * accel.x + accel.y * accel.y + accel.z * accel.z);
+  
+  // Read and print the accelerometer values in JSON format
+  serialConnection.println(accel.readToJSON("accelerometer"));
+  Serial.println(valueToJSON("Accel_mag",1,accel_mag));
+  
+  // Wait just a fraction of a second before doing it again
+  delay(100);
+}
 wire.begin(){
     if (acceleration accel => 0 && acceleration accel < 50)
         wire.write("safe");
     else if (acceleration accel => 51)
         wire.write("not safe");}
     
-
