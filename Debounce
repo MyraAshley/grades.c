@@ -7,13 +7,13 @@ ArdusatSerial serialConnection(SERIAL_MODE_HARDWARE_AND_SOFTWARE,8,9);
 Acceleration accel;
 
 void setup(void)
-{
-    serialConnection.begin(9600);
+    {serialConnection.begin(9600);
     accelerate.begin();
-    serialConnection.println(“”);
-}
+    serialConnection.println(“”);}
 void loop(void)
-  {
-    serialConmection.println(accel.readToJSON(“accelerometer”));
-    delay(100);
-}
+    {serialConmection.println(accel.readToJSON(“accelerometer”));
+    delay(100);}
+wire.begin()
+    {if acceleration accel => 40 
+    
+
