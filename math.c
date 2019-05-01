@@ -2,23 +2,25 @@
 #include <cs50.h>
 #include <math.h>
 
-int v;
-int i;
-int r;
-
+int v; 
+int r; 
+int i; 
+int x; 
 int main(void){
-   
-    printf ("what is the unknown?/n");
-    char unknown = scanf ("x");
-        if (v == x);
-            int mult = (i +r);
-        if (r == x)
-            int divide = (v/i);
-        if (i == x);
-            int divide = (v/r)
-    int v = get_int ("what is the voltage?/n");
-    int i = get_int ("what is the current?/n");
-    int r = get_int ("what is the resistance?/n");
+    printf ("what is the voltage?\n");
+    scanf ("%d",&v);
+    printf ("what is the resistance\n");
+    scanf ("%d",&r);
+    printf ("what is the current\n");
+     scanf ("%d",&i);
+    printf ("what is the unknown?\n");
+     scanf ("%d",&x);
+    if ( v ==  x){
+          v = i * r;}
+    if (r ==  x){
+            r = v/i;}
+    if ( i ==  x){
+            i = v/r;}
 }
 
 
