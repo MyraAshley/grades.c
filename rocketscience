@@ -1,0 +1,22 @@
+#include <math.h>
+#include <cs50.h>
+#include <stdio.h>
+
+float velocityi;
+int main(void){
+    float vi = get_float("what is the inital velocity?\n");
+    float radians = get_float("what is the launch angle?\n");
+    float theta = (radians * (3.14/180));
+    float accelerationY = -9.8;
+    float velocityXinitial = velocityi * cos(theta);
+    float velocityYinitial = velocityi * sin(theta);
+    printf("velocityXinitial is %f\n", velocityXinitial);
+    printf("velocityYinitial is %f\n", velocityYinitial);
+    float timehalf = (0-velocityYinitial)/accelerationY;
+    float timetotal = timehalf*timehalf;
+    float distancetotal = velocityXinitial*timetotal;
+    float height = (velocityYinitial*timehalf)+(1/2*accelerationY*(timehalf*timehalf));
+    printf("Total Time is %f sec\n",timetotal);
+    printf("Total Distance is %f m\n",distancetotal);
+    printf("Maximum height is %f m\n",height);
+}
